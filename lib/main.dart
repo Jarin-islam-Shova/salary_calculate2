@@ -30,7 +30,9 @@ class _SalaryCalculatorScreenState extends State<SalaryCalculatorScreen> {
     if (hours <= 40) {
       salary = hours * 400;
     } else {
-      salary = (40 * 400) + ((hours - 40) * 600);
+      int regularPay = 40 * 400;
+      int overtimePay = (hours - 40) * 600;
+      salary = regularPay + overtimePay;
     }
 
     setState(() {
